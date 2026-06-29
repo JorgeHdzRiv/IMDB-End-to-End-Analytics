@@ -3,14 +3,14 @@
 ## 📊 Vista Previa del Dashboard 
 <img src="assets/dashboard.jpg" alt="Vista previa del Dashboard de Power BI" width="100%">
 
-**[📥 Descargar / Ver el archivo de Power BI (.pbix)](dashboard/imdb_analytics.pbix)**
+<a href="./dashboard/imdb_analytics.pbix" target="_blank" rel="noopener noreferrer"><strong>📥 Descargar / Ver el archivo de Power BI (.pbix)</strong></a>
 
 ---
 
 ## 🌐 Vista Previa de la App Interactiva
 <img src="assets/app.jpg" alt="Vista previa de la Web App en Streamlit" width="100%">
 
-**[🚀 Ir a la App Interactiva en vivo (Streamlit Cloud)](https://imdbtopmovies.streamlit.app/)**
+<a href="https://imdbtopmovies.streamlit.app/" target="_blank" rel="noopener noreferrer"><strong>🚀 Abrir la App Interactiva en vivo (Streamlit Cloud)</strong></a>
 
 ---
 
