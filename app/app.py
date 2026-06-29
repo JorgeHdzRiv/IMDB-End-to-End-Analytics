@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import json
 from google.oauth2 import service_account
 from google.cloud import bigquery
 
@@ -9,26 +10,30 @@ st.set_page_config(page_title="IMDb Analytics Explorer", page_icon="🎬", layou
 st.title("🎬 Explorador de Películas IMDb (1980-2026)")
 st.markdown("Esta aplicación consulta datos en tiempo real desde Google BigQuery mediante SQL, permitiendo explorar los patrones clave de la industria cinematográfica.")
 
-# 2. Conexión a BigQuery (Usando caché para optimizar recursos)
+# 2. Conexión a BigQuery (Usando Secrets para despliegue en la nube)
 @st.cache_resource
 def get_bigquery_client():
-    path_credenciales = './imdb-analytics-portfolio-9146f96d121c.json'
-    credentials = service_account.Credentials.from_service_account_file(path_credenciales)
+    # Extraemos el string JSON de los secretos de Streamlit y lo convertimos a diccionario
+    key_dict = json.loads(st.secrets["gcp_service_account"])
+    
+    # Usamos from_service_account_info en lugar de from_service_account_file
+    credentials = service_account.Credentials.from_service_account_info(key_dict)
     client = bigquery.Client(credentials=credentials, project=credentials.project_id)
     return client
 
 client = get_bigquery_client()
 
-# Reemplaza 'tu-proyecto.imdb_data.movies_clean' con el ID real de tu tabla
+# ID de la tabla en BigQuery
 tabla_bq = 'imdb-analytics-portfolio.imdb_data.movies_clean'
 
 # 3. Interfaz de Usuario: Barra Lateral de Filtros (Sidebar)
 st.sidebar.header("Filtros de Búsqueda")
 
+# Lista de géneros con correcciones (Romance, Mystery)
 genero_seleccionado = st.sidebar.selectbox(
     "Selecciona un Género", 
     ["Todos", "Action", "Adventure","Animation","Comedy","Crime","Documentary","Drama","Family",
-    "Fantasy","History", "Horror","Musical","Mistery","News","Roamnce","Sci-Fi","Sport","Suspense",
+    "Fantasy","History", "Horror","Musical","Mystery","News","Romance","Sci-Fi","Sport","Suspense",
     "Thriller","War","Western"]
 )
 
@@ -76,10 +81,11 @@ else:
 st.subheader(f"🏆 Top 50 películas ({genero_seleccionado})")
 with st.spinner("Consultando en BigQuery..."):
     df_resultados = run_query(query_general)
-    st.dataframe(df_resultados, width='stretch')
+    # Se usa use_container_width para que la tabla abarque el ancho disponible
+    st.dataframe(df_resultados, use_container_width=True)
 
     if not df_resultados.empty:
-        st.bar_chart(data=df_resultados, x='title', y='average_rating',horizontal=True,sort=False)
+        st.bar_chart(data=df_resultados, x='title', y='average_rating', horizontal=True, sort=False)
 
 # ==========================================
 # SECCIÓN 2: Tendencia Histórica (Impacto 2020)
@@ -111,7 +117,7 @@ with col1:
         LIMIT 15
     """
     df_masas = run_query(query_masas)
-    st.dataframe(df_masas, width='stretch')
+    st.dataframe(df_masas, use_container_width=True)
 
 # ==========================================
 # SECCIÓN 4: El Mito de la Duración

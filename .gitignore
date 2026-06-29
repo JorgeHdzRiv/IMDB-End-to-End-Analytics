@@ -14,3 +14,5 @@ __pycache__/
 
 # Claves Google Cloud
 imdb-analytics-portfolio-9146f96d121c.json
+.streamlit/
+secrets.toml

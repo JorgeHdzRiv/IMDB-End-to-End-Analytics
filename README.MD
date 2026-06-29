@@ -1,10 +1,14 @@
 # 🎬 End-to-End Data Analytics & Engineering: IMDb Top Movies (1980-2026)
 
 ## 📊 Vista Previa del Dashboard 
-![Dashboard de IMDb](./assets/dashboard.png)
+![](./assets/dashboard.png)
+
+[Dashboard PowerBI](./dashboard/imdb_analytics.pbix)
 
 ## 📊 Vista Previa de la App Interactiva
-![Dashboard de IMDb](./assets/app.png)
+![](./assets/app.png)
+
+[App Interactiva]("https://imdbtopmovies.streamlit.app/")
 
 
 ## 📖 Descripción del Proyecto
