@@ -82,7 +82,7 @@ st.subheader(f"🏆 Top 50 películas ({genero_seleccionado})")
 with st.spinner("Consultando en BigQuery..."):
     df_resultados = run_query(query_general)
     # Se usa use_container_width para que la tabla abarque el ancho disponible
-    st.dataframe(df_resultados, use_container_width=True)
+    st.dataframe(df_resultados, width='stretch')
 
     if not df_resultados.empty:
         st.bar_chart(data=df_resultados, x='title', y='average_rating', horizontal=True, sort=False)
@@ -117,7 +117,7 @@ with col1:
         LIMIT 15
     """
     df_masas = run_query(query_masas)
-    st.dataframe(df_masas, use_container_width=True)
+    st.dataframe(df_masas, width='stretch')
 
 # ==========================================
 # SECCIÓN 4: El Mito de la Duración
