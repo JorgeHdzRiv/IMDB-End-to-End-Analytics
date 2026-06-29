@@ -1,15 +1,18 @@
 # 🎬 End-to-End Data Analytics & Engineering: IMDb Top Movies (1980-2026)
 
 ## 📊 Vista Previa del Dashboard 
-![](./assets/dashboard.png)
+<img src="assets/dashboard.png" alt="Vista previa del Dashboard de Power BI" width="100%">
 
-[Dashboard PowerBI](./dashboard/imdb_analytics.pbix)
+**[📥 Descargar / Ver el archivo de Power BI (.pbix)](dashboard/imdb_analytics.pbix)**
 
-## 📊 Vista Previa de la App Interactiva
-![](./assets/app.png)
+---
 
-[App Interactiva](https://imdbtopmovies.streamlit.app/)
+## 🌐 Vista Previa de la App Interactiva
+<img src="assets/app.png" alt="Vista previa de la Web App en Streamlit" width="100%">
 
+**[🚀 Ir a la App Interactiva en vivo (Streamlit Cloud)](https://imdbtopmovies.streamlit.app/)**
+
+---
 
 ## 📖 Descripción del Proyecto
 Este proyecto implementa un flujo completo (End-to-End) de análisis e ingeniería de datos sobre un conjunto extraído de IMDb, enfocado en largometrajes estrenados entre 1980 y 2026 con más de 5,000 votos. El ecosistema del proyecto abarca desde la limpieza de datos y construcción de un pipeline ETL hacia la nube, hasta el Análisis Exploratorio de Datos (EDA) y el despliegue de interfaces interactivas para el usuario final. 
