@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+jupyter
+google-cloud-bigquery 
+pandas-gbq
+streamlit 
+db-dtypes
+google-cloud-bigquery-storage 
+pyarrow

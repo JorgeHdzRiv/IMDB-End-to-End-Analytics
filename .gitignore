@@ -1,0 +1,16 @@
+# Entornos virtuales
+venv/
+env/
+.env
+imdb/
+.imdb
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+
+# Puntos de control de Jupyter
+.ipynb_checkpoints/
+
+# Claves Google Cloud
+imdb-analytics-portfolio-9146f96d121c.json
