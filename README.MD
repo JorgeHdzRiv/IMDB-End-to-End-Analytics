@@ -1,10 +1,10 @@
 # 🎬 End-to-End Data Analytics & Engineering: IMDb Top Movies (1980-2026)
 
 ## 📊 Vista Previa del Dashboard 
-![Dashboard de IMDb](assets/dashboard.png)
+![Dashboard de IMDb](./assets/dashboard.png)
 
 ## 📊 Vista Previa de la App Interactiva
-![Dashboard de IMDb](assets/app.png)
+![Dashboard de IMDb](./assets/app.png)
 
 
 ## 📖 Descripción del Proyecto
@@ -41,7 +41,7 @@ El objetivo es auditar, limpiar e identificar patrones en la industria cinematog
 ## 🚀 Cómo ejecutar este proyecto
 1. **Clona este repositorio:**  
 ```bash
-git clone https://github.com/TU_USUARIO/tu_repositorio.git`
+git clone "https://github.com/JorgeHdzRiv/IMDB-End-to-End-Analytics.git"
 ```
 2. **Instala las dependencias:** 
 ```bash
